@@ -1,0 +1,485 @@
+<?xml version="1.0"?>
+<Reports>
+  <!--Report *** VIGILÂNCIA RUBEOLA ***-->
+  <Report version="4.0.20193.393">
+    <Name>VIGILÂNCIA RUBEOLA</Name>
+    <ReportInfo>
+      <Author>Fossati</Author>
+    </ReportInfo>
+    <DataSource>
+      <ConnectionString>C:\Users\PIREZ\Desktop\Nova pasta\Relatorios PMSP\Base\Base Rubeola.xml</ConnectionString>
+      <RecordSource>Dados</RecordSource>
+      <Filter>CodigoProcedimento='AVRUB' and CodigoParametro='RES'</Filter>
+      <DataProvider>5</DataProvider>
+    </DataSource>
+    <Layout>
+      <Width>16245</Width>
+      <MarginLeft>250</MarginLeft>
+      <MarginTop>250</MarginTop>
+      <MarginRight>250</MarginRight>
+      <MarginBottom>250</MarginBottom>
+      <Orientation>2</Orientation>
+      <PaperSize>9</PaperSize>
+    </Layout>
+    <Font>
+      <Name>Times New Roman</Name>
+      <Size>9</Size>
+    </Font>
+    <OnOpen>' -- style script start
+_styleCtr = 0
+' -- style script end</OnOpen>
+    <Tag>VIGRUB;14 - VIGILÂNCIA RUBEOLA</Tag>
+    <CompatibilityOptions>
+      <UseCompatibleBarcode>-1</UseCompatibleBarcode>
+    </CompatibilityOptions>
+    <Groups>
+      <Group>
+        <Name>DataPedido</Name>
+        <GroupBy>DataPedido</GroupBy>
+        <Sort>1</Sort>
+      </Group>
+      <Group>
+        <Name>NumeroPedido</Name>
+        <GroupBy>NumeroPedido</GroupBy>
+        <Sort>1</Sort>
+      </Group>
+    </Groups>
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <Type>0</Type>
+        <Height>285</Height>
+        <CanGrow>0</CanGrow>
+        <OnFormat>' -- style script start
+detail.BackColor = iif(_styleCtr mod 2 = 0, rgb(255,255,255),rgb(240,240,240))
+_styleCtr = _styleCtr + 1
+' -- style script end</OnFormat>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <Type>1</Type>
+        <Height>210</Height>
+        <BackColor>13882323</BackColor>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <Type>2</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <Type>3</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <Type>4</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>DataPedido_Header</Name>
+        <Type>5</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>DataPedido_Footer</Name>
+        <Type>6</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>NumeroPedido_Header</Name>
+        <Type>7</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>NumeroPedido_Footer</Name>
+        <Type>8</Type>
+        <Visible>0</Visible>
+      </Section>
+    </Sections>
+    <Fields>
+      <Field>
+        <Name>DataSistemaLbl</Name>
+        <Section>1</Section>
+        <Text>Cadastro</Text>
+        <Width>1035</Width>
+        <Height>210</Height>
+        <Align>3</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Bold>-1</Bold>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>PacienteNomeLbl</Name>
+        <Section>1</Section>
+        <Text>Nome</Text>
+        <Left>2625</Left>
+        <Width>5205</Width>
+        <Height>210</Height>
+        <Align>3</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Bold>-1</Bold>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>PacienteSexoLbl</Name>
+        <Section>1</Section>
+        <Text>Sexo</Text>
+        <Left>7905</Left>
+        <Width>600</Width>
+        <Height>210</Height>
+        <Align>4</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Bold>-1</Bold>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>PacienteDataNascimentoLbl</Name>
+        <Section>1</Section>
+        <Text>Dt.Nasc</Text>
+        <Left>8550</Left>
+        <Width>780</Width>
+        <Height>210</Height>
+        <Align>4</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Bold>-1</Bold>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>ResultadoLbl</Name>
+        <Section>1</Section>
+        <Text>AVRUB</Text>
+        <Left>9585</Left>
+        <Width>1845</Width>
+        <Height>210</Height>
+        <Align>4</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Bold>-1</Bold>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>DataSistemaCtl</Name>
+        <Section>0</Section>
+        <Text>DataSistema</Text>
+        <Calculated>-1</Calculated>
+        <Width>1035</Width>
+        <Height>285</Height>
+        <Align>0</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>8.25</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>PacienteNomeCtl</Name>
+        <Section>0</Section>
+        <Text>NomePaciente</Text>
+        <Calculated>-1</Calculated>
+        <Left>2565</Left>
+        <Width>5415</Width>
+        <Height>285</Height>
+        <Align>0</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>8.25</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>PacienteSexoCtl</Name>
+        <Section>0</Section>
+        <Text>Sexo</Text>
+        <Calculated>-1</Calculated>
+        <Left>7980</Left>
+        <Width>570</Width>
+        <Height>285</Height>
+        <Align>1</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>PacienteDataNascimentoCtl</Name>
+        <Section>0</Section>
+        <Text>DataNascimento</Text>
+        <Calculated>-1</Calculated>
+        <Left>8550</Left>
+        <Width>855</Width>
+        <Height>285</Height>
+        <Align>1</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>ResultadoCtl</Name>
+        <Section>0</Section>
+        <Text>Resultado</Text>
+        <Calculated>-1</Calculated>
+        <Left>9585</Left>
+        <Width>1845</Width>
+        <Height>285</Height>
+        <Align>1</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>DataSistemaLbl1</Name>
+        <Section>1</Section>
+        <Text>Nm. Pedido</Text>
+        <Left>1140</Left>
+        <Width>1440</Width>
+        <Height>210</Height>
+        <Align>4</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Bold>-1</Bold>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>DataSistemaLbl2</Name>
+        <Section>0</Section>
+        <Text>NumeroPedido</Text>
+        <Calculated>-1</Calculated>
+        <Left>1095</Left>
+        <Width>1440</Width>
+        <Height>285</Height>
+        <Align>1</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>8.25</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>ResultadoLbl1</Name>
+        <Section>1</Section>
+        <Text>RUBM</Text>
+        <Left>11887.5</Left>
+        <Width>1845</Width>
+        <Height>210</Height>
+        <Align>4</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Bold>-1</Bold>
+          <Underline>-1</Underline>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>ResultadoLbl2</Name>
+        <Section>1</Section>
+        <Text>RUBG</Text>
+        <Left>14340</Left>
+        <Width>1845</Width>
+        <Height>210</Height>
+        <Align>4</Align>
+        <WordWrap>0</WordWrap>
+        <Font>
+          <Bold>-1</Bold>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+      <Field>
+        <Name>ResultadoCtl1</Name>
+        <Section>0</Section>
+        <Text>"[NumeroPedido] = '" &amp; [NumeroPedido] &amp; "'"</Text>
+        <Calculated>-1</Calculated>
+        <Left>11887.5</Left>
+        <Width>1845</Width>
+        <Height>285</Height>
+        <Align>1</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+        <Subreport>RUBM_Resultado</Subreport>
+      </Field>
+      <Field>
+        <Name>ResultadoCtl2</Name>
+        <Section>0</Section>
+        <Text>"[NumeroPedido] = '" &amp; [NumeroPedido] &amp; "'"</Text>
+        <Calculated>-1</Calculated>
+        <Left>14340</Left>
+        <Width>1845</Width>
+        <Height>285</Height>
+        <Align>1</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+        <Subreport>RUBG_Resultado</Subreport>
+      </Field>
+    </Fields>
+  </Report>
+  <!--Report *** RUBM_Resultado ***-->
+  <Report version="4.0.20193.393">
+    <Name>RUBM_Resultado</Name>
+    <ReportInfo>
+      <Author>Fossati</Author>
+    </ReportInfo>
+    <DataSource>
+      <ConnectionString>C:\Users\PIREZ\Desktop\Nova pasta\Relatorios PMSP\Base\Base Rubeola.xml</ConnectionString>
+      <RecordSource>Dados</RecordSource>
+      <Filter>CodigoProcedimento='RUBM' and CodigoParametro='RUBM'</Filter>
+      <DataProvider>5</DataProvider>
+    </DataSource>
+    <Layout>
+      <Width>16245</Width>
+      <MarginLeft>250</MarginLeft>
+      <MarginTop>250</MarginTop>
+      <MarginRight>250</MarginRight>
+      <MarginBottom>250</MarginBottom>
+      <Orientation>2</Orientation>
+      <PaperSize>9</PaperSize>
+    </Layout>
+    <Font>
+      <Name>Times New Roman</Name>
+      <Size>9</Size>
+    </Font>
+    <Tag>VIGRUB;14 - VIGILÂNCIA RUBEOLA</Tag>
+    <CompatibilityOptions>
+      <UseCompatibleBarcode>-1</UseCompatibleBarcode>
+    </CompatibilityOptions>
+    <Groups />
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <Type>0</Type>
+        <Height>285</Height>
+        <CanGrow>0</CanGrow>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <Type>1</Type>
+        <BackColor>13882323</BackColor>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <Type>2</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <Type>3</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <Type>4</Type>
+        <Visible>0</Visible>
+      </Section>
+    </Sections>
+    <Fields>
+      <Field>
+        <Name>ResultadoCtl1</Name>
+        <Section>0</Section>
+        <Text>Resultado</Text>
+        <Calculated>-1</Calculated>
+        <Width>1845</Width>
+        <Height>285</Height>
+        <Align>1</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+    </Fields>
+  </Report>
+  <!--Report *** RUBG_Resultado ***-->
+  <Report version="4.0.20193.393">
+    <Name>RUBG_Resultado</Name>
+    <ReportInfo>
+      <Author>Fossati</Author>
+    </ReportInfo>
+    <DataSource>
+      <ConnectionString>C:\Users\PIREZ\Desktop\Nova pasta\Relatorios PMSP\Base\Base Rubeola.xml</ConnectionString>
+      <RecordSource>Dados</RecordSource>
+      <Filter>CodigoProcedimento='RUBG' and CodigoParametro='INDICE'</Filter>
+      <DataProvider>5</DataProvider>
+    </DataSource>
+    <Layout>
+      <Width>16245</Width>
+      <MarginLeft>250</MarginLeft>
+      <MarginTop>250</MarginTop>
+      <MarginRight>250</MarginRight>
+      <MarginBottom>250</MarginBottom>
+      <Orientation>2</Orientation>
+      <PaperSize>9</PaperSize>
+    </Layout>
+    <Font>
+      <Name>Times New Roman</Name>
+      <Size>9</Size>
+    </Font>
+    <Tag>VIGRUB;14 - VIGILÂNCIA RUBEOLA</Tag>
+    <CompatibilityOptions>
+      <UseCompatibleBarcode>-1</UseCompatibleBarcode>
+    </CompatibilityOptions>
+    <Groups />
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <Type>0</Type>
+        <Height>285</Height>
+        <CanGrow>0</CanGrow>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <Type>1</Type>
+        <BackColor>13882323</BackColor>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <Type>2</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <Type>3</Type>
+        <Visible>0</Visible>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <Type>4</Type>
+        <Visible>0</Visible>
+      </Section>
+    </Sections>
+    <Fields>
+      <Field>
+        <Name>ResultadoCtl1</Name>
+        <Section>0</Section>
+        <Text>Resultado</Text>
+        <Calculated>-1</Calculated>
+        <Width>1845</Width>
+        <Height>285</Height>
+        <Align>1</Align>
+        <Font>
+          <Name>Microsoft Sans Serif</Name>
+          <Size>9</Size>
+        </Font>
+      </Field>
+    </Fields>
+  </Report>
+</Reports>
